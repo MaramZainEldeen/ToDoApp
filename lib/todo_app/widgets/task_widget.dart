@@ -23,7 +23,6 @@ class TaskWidget extends StatelessWidget {
           value: task.isCompleted,
           onChanged: (v) {
             fun(task);
-            delete(task);
           },
         ),
         SizedBox(
