@@ -20,8 +20,7 @@ class _TodoHomePageState extends State<TodoHomePage> {
 
   deleteTaskCompleteness(Task task) {
     int index = tasksList.indexOf(task);
-    tasksList[index].remove = tasksList[index].remove;
-
+    tasksList.removeAt(index);
     setState(() {});
   }
 

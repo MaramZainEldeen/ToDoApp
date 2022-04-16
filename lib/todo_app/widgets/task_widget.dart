@@ -17,26 +17,23 @@ class TaskWidget extends StatelessWidget {
               : Color.fromARGB(115, 147, 137, 137),
           borderRadius: BorderRadius.circular(15)),
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
-      child: Column(children: [
-        CheckboxListTile(
-          title: Text(task.title),
-          value: task.isCompleted,
-          onChanged: (v) {
-            fun(task);
-          },
-        ),
-        SizedBox(
-          width: 15,
-        ),
-        CheckboxListTile(
-          title: Text("Delete The Task I am not to do task"),
-          value: task.remove,
-          onChanged: (v) {
-            fun(task);
-            delete(task);
-          },
-        ),
-      ]),
+      child: Column(
+        children: [
+          CheckboxListTile(
+            secondary: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () {
+                delete(task);
+              },
+            ),
+            title: Text(task.title),
+            value: task.isCompleted,
+            onChanged: (v) {
+              fun(task);
+            },
+          ),
+        ],
+      ),
     );
   }
 }
